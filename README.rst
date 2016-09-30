@@ -41,7 +41,7 @@ signatures. The COMPLETE attribute parses what is defined in the
 informal specification as a "single complete type". The CODE attribute is
 equivalent to the specification's "type code".
 
-The parser is easily used either by composition or by inheritance. Each
+The parser is easily used either by delegation or by inheritance. Each
 sub-parser attribute is a ParserElement; consequently each sub-parser supports
 the addParseAction() method. To customize the basic parser to return a
 particular value as a result of having parsed a signature invoke the
