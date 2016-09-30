@@ -13,7 +13,7 @@ with open(local_file("src/dbus_signature_pyparsing/_version.py")) as o:
         exec(o.read())
 
 setuptools.setup(
-    name='dbus-signature-parser',
+    name='dbus-signature-pyparsing',
     version=__version__,
     author='Anne Mulhern',
     author_email='amulhern@redhat.com',
