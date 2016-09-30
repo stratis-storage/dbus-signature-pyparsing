@@ -1,0 +1,7 @@
+recursive-include src/dbus_signature_pyparsing *.py
+recursive-include tests *.py
+include check.py
+include tox.ini
+global-include requirements.txt
+include LICENSE README.rst
+include setup.py setup.cfg

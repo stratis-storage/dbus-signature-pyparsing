@@ -22,8 +22,8 @@ Usage and Implementation Hints
 Usage of the library to verify that a string is a signature is fairly
 straightforward::
 
-   >>> from dbus_signature_pyparsing import SignatureParser
-   >>> parser = SignatureParser()
+   >>> from dbus_signature_pyparsing import Parser
+   >>> parser = Parser()
    >>> parser.PARSER.parseString("a(qy)", parseAll=True)
 
 If parseString() does not raise a pyparsing exception, the argument string
@@ -35,7 +35,7 @@ parameter to True. If parseAll is False, which is the default, the parser
 can always parse the empty string, and every string will be parsed and verified
 to be a valid signature.
 
-The SignatureParser object exposes all its sub-parsers as instance attributes.
+The Parser object exposes all its sub-parsers as instance attributes.
 The PARSER attribute is the top-level parser, suitable for parsing general
 signatures. The COMPLETE attribute parses what is defined in the
 informal specification as a "single complete type". The CODE attribute is
