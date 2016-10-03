@@ -23,34 +23,11 @@ import pyparsing
 
 from hypothesis import given
 from hypothesis import settings
-from hypothesis import strategies
 
 from dbus_signature_pyparsing import Parser
 
-SIMPLE_STRATEGY = strategies.sampled_from(
-   ['y', 'b', 'n', 'q', 'i', 'u', 'x', 't', 'd', 'h', 's', 'o', 'g', 'v']
-)
+from hypothesis_extra_dbus_signature import dbus_signatures
 
-SINGLETON_SIGNATURE_STRATEGY = strategies.recursive(
-   SIMPLE_STRATEGY,
-   lambda children: \
-      strategies.builds(
-         ''.join,
-         strategies.lists(children, min_size=1)
-      ).flatmap(lambda v: strategies.just('(' + v + ')')) | \
-      children.flatmap(lambda v: strategies.just('a' + v)) | \
-      strategies.builds(
-         lambda x, y: x + y,
-         SIMPLE_STRATEGY,
-         children
-      ).flatmap(lambda v: strategies.just('a' + '{' + v + '}')),
-   max_leaves=20
-)
-
-SIGNATURE_STRATEGY = strategies.builds(
-   ''.join,
-   strategies.lists(SINGLETON_SIGNATURE_STRATEGY, max_size=10)
-)
 
 class ParseTestCase(unittest.TestCase):
     """
@@ -59,7 +36,7 @@ class ParseTestCase(unittest.TestCase):
 
     _PARSER = Parser()
 
-    @given(SIGNATURE_STRATEGY)
+    @given(dbus_signatures())
     @settings(max_examples=100)
     def testParsing(self, signature):
         """
