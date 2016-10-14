@@ -26,7 +26,7 @@ from hypothesis import settings
 
 from dbus_signature_pyparsing import Parser
 
-from hypothesis_extra_dbus_signature import dbus_signatures
+from hs_dbus_signature import dbus_signatures
 
 
 class ParseTestCase(unittest.TestCase):
