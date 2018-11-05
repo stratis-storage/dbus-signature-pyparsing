@@ -16,4 +16,4 @@ script:
     - make -f Makefile $TASK
 
 python:
-  - "3.4"
+  - "3.5"
