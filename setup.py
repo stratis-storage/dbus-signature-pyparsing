@@ -4,13 +4,15 @@ import setuptools
 if sys.version_info[0] < 3:
     from codecs import open
 
+
 def local_file(name):
     return os.path.relpath(os.path.join(os.path.dirname(__file__), name))
+
 
 README = local_file("README.rst")
 
 with open(local_file("src/dbus_signature_pyparsing/_version.py")) as o:
-        exec(o.read())
+    exec(o.read())
 
 setuptools.setup(
     name='dbus-signature-pyparsing',
@@ -33,10 +35,7 @@ setuptools.setup(
         'Programming Language :: Python :: Implementation :: PyPy',
         'Topic :: Software Development :: Libraries',
         'Topic :: Software Development :: Libraries :: Python Modules',
-        ],
-    install_requires = [
-       'pyparsing'
     ],
+    install_requires=['pyparsing'],
     package_dir={"": "src"},
-    packages=setuptools.find_packages("src")
-    )
+    packages=setuptools.find_packages("src"))

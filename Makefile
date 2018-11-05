@@ -8,6 +8,14 @@ lint:
 coverage:
 	$(TOX) -c tox.ini -e coverage
 
+.PHONY: fmt
+fmt:
+	yapf --style pep8 --recursive --in-place check.py setup.py src tests
+
+.PHONY: fmt-travis
+fmt-travis:
+	yapf --style pep8 --recursive --diff check.py setup.py src tests
+
 .PHONY: test
 test:
 	$(TOX) -c tox.ini -e test
