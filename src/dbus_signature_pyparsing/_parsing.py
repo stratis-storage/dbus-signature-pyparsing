@@ -21,7 +21,7 @@ from pyparsing import OneOrMore
 from pyparsing import ZeroOrMore
 
 
-class Parser(object):
+class Parser():
     """
     Parse a dbus signature using pyparsing.
     """
