@@ -6,11 +6,11 @@ import sys
 
 arg_map = {
     "src/dbus_signature_pyparsing": [
-        "--reports=no", "--disable=I", "--disable=invalid-name",
+        "--reports=no", "--disable=I",
         "--msg-template='{path}:{line}: [{msg_id}({symbol}), {obj}] {msg}'"
     ],
     "tests": [
-        "--reports=no", "--disable=invalid-name",
+        "--reports=no",
         "--msg-template='{path}:{line}: [{msg_id}({symbol}), {obj}] {msg}'"
     ]
 }
