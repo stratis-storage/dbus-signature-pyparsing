@@ -10,7 +10,7 @@ arg_map = {
         "--msg-template='{path}:{line}: [{msg_id}({symbol}), {obj}] {msg}'"
     ],
     "tests": [
-        "--reports=no", "--disable=bad-continuation", "--disable=invalid-name",
+        "--reports=no", "--disable=invalid-name",
         "--msg-template='{path}:{line}: [{msg_id}({symbol}), {obj}] {msg}'"
     ]
 }
