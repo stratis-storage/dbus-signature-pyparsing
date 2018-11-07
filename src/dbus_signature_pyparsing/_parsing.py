@@ -11,7 +11,6 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-
 """
 pyparsing based module for parsing a dbus method input or output signature.
 """
@@ -22,10 +21,11 @@ from pyparsing import OneOrMore
 from pyparsing import ZeroOrMore
 
 
-class Parser(object):
+class Parser():
     """
     Parse a dbus signature using pyparsing.
     """
+
     # pylint: disable=too-many-instance-attributes
     # pylint: disable=too-few-public-methods
 

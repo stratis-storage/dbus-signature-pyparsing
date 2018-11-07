@@ -11,11 +11,9 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-
 """
 Test signature parsing.
 """
-
 
 import unittest
 
@@ -43,8 +41,7 @@ class ParseTestCase(unittest.TestCase):
         Test that parsing is always succesful on valid strings.
         """
         self.assertIsNotNone(
-           self._PARSER.PARSER.parseString(signature, parseAll=True)
-        )
+            self._PARSER.PARSER.parseString(signature, parseAll=True))
 
     def testExceptions(self):
         """

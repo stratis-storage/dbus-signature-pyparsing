@@ -1,5 +1,3 @@
-sudo: false
-
 os:
   - linux
 
@@ -10,6 +8,7 @@ language: python
 
 env:
   matrix:
+    - TASK=fmt-travis
     - TASK=lint
     - TASK=test
     - TASK=coverage
@@ -18,4 +17,4 @@ script:
     - make -f Makefile $TASK
 
 python:
-  - "3.4"
+  - "3.5"
