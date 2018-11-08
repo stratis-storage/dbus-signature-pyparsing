@@ -36,14 +36,14 @@ class ParseTestCase(unittest.TestCase):
 
     @given(dbus_signatures())
     @settings(max_examples=100)
-    def testParsing(self, signature):
+    def test_parsing(self, signature):
         """
         Test that parsing is always succesful on valid strings.
         """
         self.assertIsNotNone(
             self._PARSER.PARSER.parseString(signature, parseAll=True))
 
-    def testExceptions(self):
+    def test_exception(self):
         """
         Test failure on some invalid strings.
         """

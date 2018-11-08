@@ -28,7 +28,7 @@ class Parser():
 
     # pylint: disable=too-many-instance-attributes
     # pylint: disable=too-few-public-methods
-
+    # pylint: disable=invalid-name
     def __init__(self):
         """
         Initializer.
