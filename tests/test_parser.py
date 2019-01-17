@@ -15,6 +15,8 @@
 Test signature parsing.
 """
 
+from os import sys
+
 import unittest
 
 import pyparsing
@@ -25,6 +27,10 @@ from hypothesis import settings
 from dbus_signature_pyparsing import Parser
 
 from hs_dbus_signature import dbus_signatures
+
+settings.register_profile("tracing", deadline=None)
+if sys.gettrace() is not None:
+    settings.load_profile("tracing")
 
 
 class ParseTestCase(unittest.TestCase):
