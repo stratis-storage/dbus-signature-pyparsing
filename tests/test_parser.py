@@ -15,6 +15,7 @@
 Test signature parsing.
 """
 
+from os import environ
 from os import sys
 
 import unittest
@@ -29,7 +30,7 @@ from dbus_signature_pyparsing import Parser
 from hs_dbus_signature import dbus_signatures
 
 settings.register_profile("tracing", deadline=None)
-if sys.gettrace() is not None:
+if sys.gettrace() is not None or environ.get('TRAVIS') is not None:
     settings.load_profile("tracing")
 
 
