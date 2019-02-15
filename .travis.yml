@@ -1,10 +1,10 @@
-os:
-  - linux
+os: linux
+language: python
+python: "3.6"
 
 branches:
   only:
     - master
-language: python
 
 env:
   matrix:
@@ -15,6 +15,3 @@ env:
 
 script:
     - make -f Makefile $TASK
-
-python:
-  - "3.5"
