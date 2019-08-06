@@ -21,7 +21,7 @@ from pyparsing import OneOrMore
 from pyparsing import ZeroOrMore
 
 
-class Parser():
+class Parser:
     """
     Parse a dbus signature using pyparsing.
     """
@@ -37,54 +37,52 @@ class Parser():
 
         All productions are public instance attributes.
         """
-        self.BYTE = Literal('y')('BYTE')
-        self.BOOLEAN = Literal('b')('BOOLEAN')
-        self.INT16 = Literal('n')('INT16')
-        self.UINT16 = Literal('q')('UINT16')
-        self.INT32 = Literal('i')('INT32')
-        self.UINT32 = Literal('u')('UINT32')
-        self.INT64 = Literal('x')('INT64')
-        self.UINT64 = Literal('t')('UINT64')
-        self.DOUBLE = Literal('d')('DOUBLE')
-        self.UNIX_FD = Literal('h')('UNIX_FD')
+        self.BYTE = Literal("y")("BYTE")
+        self.BOOLEAN = Literal("b")("BOOLEAN")
+        self.INT16 = Literal("n")("INT16")
+        self.UINT16 = Literal("q")("UINT16")
+        self.INT32 = Literal("i")("INT32")
+        self.UINT32 = Literal("u")("UINT32")
+        self.INT64 = Literal("x")("INT64")
+        self.UINT64 = Literal("t")("UINT64")
+        self.DOUBLE = Literal("d")("DOUBLE")
+        self.UNIX_FD = Literal("h")("UNIX_FD")
 
-        self.STRING = Literal('s')('STRING')
-        self.OBJECT_PATH = Literal('o')('OBJECT_PATH')
-        self.SIGNATURE = Literal('g')('SIGNATURE')
+        self.STRING = Literal("s")("STRING")
+        self.OBJECT_PATH = Literal("o")("OBJECT_PATH")
+        self.SIGNATURE = Literal("g")("SIGNATURE")
 
-        self.VARIANT = Literal('v')('VARIANT')
+        self.VARIANT = Literal("v")("VARIANT")
 
-        self.CODE = \
-           self.BYTE ^ \
-           self.BOOLEAN ^ \
-           self.DOUBLE ^ \
-           self.INT16 ^ \
-           self.UINT16 ^ \
-           self.INT32 ^ \
-           self.UINT32 ^ \
-           self.INT64 ^ \
-           self.UINT64 ^ \
-           self.UNIX_FD ^ \
-           self.STRING ^ \
-           self.OBJECT_PATH ^ \
-           self.SIGNATURE ^ \
-           self.VARIANT
+        self.CODE = (
+            self.BYTE
+            ^ self.BOOLEAN
+            ^ self.DOUBLE
+            ^ self.INT16
+            ^ self.UINT16
+            ^ self.INT32
+            ^ self.UINT32
+            ^ self.INT64
+            ^ self.UINT64
+            ^ self.UNIX_FD
+            ^ self.STRING
+            ^ self.OBJECT_PATH
+            ^ self.SIGNATURE
+            ^ self.VARIANT
+        )
 
         self.COMPLETE = Forward()
 
-        self.DICT_ENTRY = \
-           Literal('{') + \
-           self.CODE + \
-           Forward(self.COMPLETE) + \
-           Literal('}')
-        self.DICT_ENTRY.setName('DICT_ENTRY')
+        self.DICT_ENTRY = (
+            Literal("{") + self.CODE + Forward(self.COMPLETE) + Literal("}")
+        )
+        self.DICT_ENTRY.setName("DICT_ENTRY")
 
-        self.ARRAY = Literal('a') + (Forward(self.COMPLETE) ^ self.DICT_ENTRY)
-        self.ARRAY.setName('ARRAY')
+        self.ARRAY = Literal("a") + (Forward(self.COMPLETE) ^ self.DICT_ENTRY)
+        self.ARRAY.setName("ARRAY")
 
-        self.STRUCT = \
-           Literal('(') + OneOrMore(Forward(self.COMPLETE)) + Literal(')')
-        self.STRUCT.setName('STRUCT')
+        self.STRUCT = Literal("(") + OneOrMore(Forward(self.COMPLETE)) + Literal(")")
+        self.STRUCT.setName("STRUCT")
 
         self.COMPLETE <<= self.CODE ^ self.ARRAY ^ self.STRUCT
         self.PARSER = ZeroOrMore(self.COMPLETE)
