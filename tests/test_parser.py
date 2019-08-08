@@ -30,7 +30,7 @@ from dbus_signature_pyparsing import Parser
 from hs_dbus_signature import dbus_signatures
 
 settings.register_profile("tracing", deadline=None)
-if sys.gettrace() is not None or environ.get('TRAVIS') is not None:
+if sys.gettrace() is not None or environ.get("TRAVIS") is not None:
     settings.load_profile("tracing")
 
 
@@ -47,8 +47,7 @@ class ParseTestCase(unittest.TestCase):
         """
         Test that parsing is always succesful on valid strings.
         """
-        self.assertIsNotNone(
-            self._PARSER.PARSER.parseString(signature, parseAll=True))
+        self.assertIsNotNone(self._PARSER.PARSER.parseString(signature, parseAll=True))
 
     def test_exception(self):
         """
@@ -56,18 +55,18 @@ class ParseTestCase(unittest.TestCase):
         """
         parser = self._PARSER.PARSER
         with self.assertRaises(pyparsing.ParseException):
-            parser.parseString('a', parseAll=True)
+            parser.parseString("a", parseAll=True)
         with self.assertRaises(pyparsing.ParseException):
-            parser.parseString('()', parseAll=True)
+            parser.parseString("()", parseAll=True)
         with self.assertRaises(pyparsing.ParseException):
-            parser.parseString('{}', parseAll=True)
+            parser.parseString("{}", parseAll=True)
         with self.assertRaises(pyparsing.ParseException):
-            parser.parseString('{b}', parseAll=True)
+            parser.parseString("{b}", parseAll=True)
         with self.assertRaises(pyparsing.ParseException):
-            parser.parseString('a{b}', parseAll=True)
+            parser.parseString("a{b}", parseAll=True)
         with self.assertRaises(pyparsing.ParseException):
-            parser.parseString('a{}', parseAll=True)
+            parser.parseString("a{}", parseAll=True)
         with self.assertRaises(pyparsing.ParseException):
-            parser.parseString('a{byy}', parseAll=True)
+            parser.parseString("a{byy}", parseAll=True)
         with self.assertRaises(pyparsing.ParseException):
-            parser.parseString('a{ayy}', parseAll=True)
+            parser.parseString("a{ayy}", parseAll=True)

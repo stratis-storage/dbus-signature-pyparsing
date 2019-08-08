@@ -6,13 +6,14 @@ import sys
 
 arg_map = {
     "src/dbus_signature_pyparsing": [
-        "--reports=no", "--disable=I",
-        "--msg-template='{path}:{line}: [{msg_id}({symbol}), {obj}] {msg}'"
+        "--reports=no",
+        "--disable=I",
+        "--msg-template='{path}:{line}: [{msg_id}({symbol}), {obj}] {msg}'",
     ],
     "tests": [
         "--reports=no",
-        "--msg-template='{path}:{line}: [{msg_id}({symbol}), {obj}] {msg}'"
-    ]
+        "--msg-template='{path}:{line}: [{msg_id}({symbol}), {obj}] {msg}'",
+    ],
 }
 
 
@@ -25,9 +26,8 @@ def get_parser():
     """
     parser = argparse.ArgumentParser()
     parser.add_argument(
-        "package",
-        choices=arg_map.keys(),
-        help="designates the package to test")
+        "package", choices=arg_map.keys(), help="designates the package to test"
+    )
     parser.add_argument("--ignore", help="ignore these files")
     return parser
 
