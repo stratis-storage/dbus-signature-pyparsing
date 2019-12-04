@@ -15,10 +15,8 @@
 pyparsing based module for parsing a dbus method input or output signature.
 """
 
-from pyparsing import Forward
-from pyparsing import Literal
-from pyparsing import OneOrMore
-from pyparsing import ZeroOrMore
+# isort: THIRDPARTY
+from pyparsing import Forward, Literal, OneOrMore, ZeroOrMore
 
 
 class Parser:

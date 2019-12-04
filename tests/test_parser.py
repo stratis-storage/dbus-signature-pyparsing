@@ -15,19 +15,19 @@
 Test signature parsing.
 """
 
-from os import environ
-from os import sys
-
+# isort: STDLIB
 import unittest
+from os import environ, sys
 
+# isort: THIRDPARTY
 import pyparsing
+from hypothesis import given, settings
 
-from hypothesis import given
-from hypothesis import settings
-
-from dbus_signature_pyparsing import Parser
-
+# isort: FIRSTPARTY
 from hs_dbus_signature import dbus_signatures
+
+# isort: LOCAL
+from dbus_signature_pyparsing import Parser
 
 settings.register_profile("tracing", deadline=None)
 if sys.gettrace() is not None or environ.get("TRAVIS") is not None:
