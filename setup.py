@@ -23,6 +23,7 @@ setuptools.setup(
     version=__version__,
     author="Anne Mulhern",
     author_email="amulhern@redhat.com",
+    url="https://github.com/stratis-storage/dbus-signature-pyparsing",
     description="dbus signature parser",
     long_description=open(README, encoding="utf-8").read(),
     platforms=["Linux"],
