@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 """
-Test signature parsing.
+Hypothesis-based tests of signature parsing.
 """
 
 # isort: STDLIB
@@ -20,7 +20,6 @@ import unittest
 from os import environ, sys
 
 # isort: THIRDPARTY
-import pyparsing
 from hypothesis import given, settings
 
 # isort: FIRSTPARTY
@@ -48,25 +47,3 @@ class ParseTestCase(unittest.TestCase):
         Test that parsing is always succesful on valid strings.
         """
         self.assertIsNotNone(self._PARSER.PARSER.parseString(signature, parseAll=True))
-
-    def test_exception(self):
-        """
-        Test failure on some invalid strings.
-        """
-        parser = self._PARSER.PARSER
-        with self.assertRaises(pyparsing.ParseException):
-            parser.parseString("a", parseAll=True)
-        with self.assertRaises(pyparsing.ParseException):
-            parser.parseString("()", parseAll=True)
-        with self.assertRaises(pyparsing.ParseException):
-            parser.parseString("{}", parseAll=True)
-        with self.assertRaises(pyparsing.ParseException):
-            parser.parseString("{b}", parseAll=True)
-        with self.assertRaises(pyparsing.ParseException):
-            parser.parseString("a{b}", parseAll=True)
-        with self.assertRaises(pyparsing.ParseException):
-            parser.parseString("a{}", parseAll=True)
-        with self.assertRaises(pyparsing.ParseException):
-            parser.parseString("a{byy}", parseAll=True)
-        with self.assertRaises(pyparsing.ParseException):
-            parser.parseString("a{ayy}", parseAll=True)
