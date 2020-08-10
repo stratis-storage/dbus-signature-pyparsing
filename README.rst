@@ -50,3 +50,11 @@ chosen method. The modified parser should then return the desired value when
 the parseString() method is invoked on a valid signature string.
 For further assistance, consult pyparsing's extensive documentation at
 http://pyparsing.wikispaces.com/ and https://pythonhosted.org/pyparsing/.
+
+Packaging
+---------
+
+Downstream packagers, if incorporating testing into their packaging, are
+encouraged to use only the tests in the test_deterministic.py module, to
+avoid testing failures that may arise due to the non-deterministic behavior
+of Hypothesis tests.
