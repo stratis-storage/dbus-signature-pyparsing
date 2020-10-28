@@ -6,6 +6,11 @@ import subprocess
 import sys
 
 arg_map = {
+    "check.py": [
+        "--reports=no",
+        "--disable=I",
+        "--msg-template='{path}:{line}: [{msg_id}({symbol}), {obj}] {msg}'",
+    ],
     "src/dbus_signature_pyparsing": [
         "--reports=no",
         "--disable=I",
