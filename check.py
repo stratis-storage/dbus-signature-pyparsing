@@ -1,11 +1,25 @@
 #!/usr/bin/python
 
+"""
+Invoke pylint with pre-selected options.
+"""
+
 # isort: STDLIB
 import argparse
 import subprocess
 import sys
 
 arg_map = {
+    "check.py": [
+        "--reports=no",
+        "--disable=I",
+        "--msg-template='{path}:{line}: [{msg_id}({symbol}), {obj}] {msg}'",
+    ],
+    "setup.py": [
+        "--reports=no",
+        "--disable=I",
+        "--msg-template='{path}:{line}: [{msg_id}({symbol}), {obj}] {msg}'",
+    ],
     "src/dbus_signature_pyparsing": [
         "--reports=no",
         "--disable=I",
@@ -29,7 +43,6 @@ def get_parser():
     parser.add_argument(
         "package", choices=arg_map.keys(), help="designates the package to test"
     )
-    parser.add_argument("--ignore", help="ignore these files")
     return parser
 
 
@@ -39,13 +52,13 @@ def get_command(namespace):
 
     :param `Namespace` namespace: the namespace
     """
-    cmd = ["pylint", namespace.package] + arg_map[namespace.package]
-    if namespace.ignore:
-        cmd.append("--ignore=%s" % namespace.ignore)
-    return cmd
+    return ["pylint", namespace.package] + arg_map[namespace.package]
 
 
 def main():
+    """
+    The main method
+    """
     args = get_parser().parse_args()
     return subprocess.call(get_command(args), stdout=sys.stdout)
 
