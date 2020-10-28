@@ -1,5 +1,9 @@
 #!/usr/bin/python
 
+"""
+Invoke pylint with pre-selected options.
+"""
+
 # isort: STDLIB
 import argparse
 import subprocess
