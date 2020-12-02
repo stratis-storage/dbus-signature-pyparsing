@@ -17,7 +17,7 @@ Hypothesis-based tests of signature parsing.
 
 # isort: STDLIB
 import unittest
-from os import environ, sys
+from os import sys
 
 # isort: THIRDPARTY
 from hypothesis import given, settings
@@ -29,7 +29,7 @@ from hs_dbus_signature import dbus_signatures
 from dbus_signature_pyparsing import Parser
 
 settings.register_profile("tracing", deadline=None)
-if sys.gettrace() is not None or environ.get("TRAVIS") is not None:
+if sys.gettrace() is not None:
     settings.load_profile("tracing")
 
 
