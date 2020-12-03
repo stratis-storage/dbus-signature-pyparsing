@@ -11,6 +11,8 @@ YAML linter: yamllint (1.23.0)
   https://github.com/stratis-storage/dbus-signature-pyparsing/pull/18
 
 - Tidies and Maintenance:
+  https://github.com/stratis-storage/dbus-signature-pyparsing/pull/24
+  https://github.com/stratis-storage/dbus-signature-pyparsing/pull/23
   https://github.com/stratis-storage/dbus-signature-pyparsing/pull/21
   https://github.com/stratis-storage/dbus-signature-pyparsing/pull/17
   https://github.com/stratis-storage/dbus-signature-pyparsing/pull/16
