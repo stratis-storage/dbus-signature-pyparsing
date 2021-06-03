@@ -10,12 +10,12 @@ coverage:
 
 .PHONY: fmt
 fmt:
-	isort --recursive check.py setup.py src tests
+	isort --recursive setup.py src tests
 	black .
 
 .PHONY: fmt-travis
 fmt-travis:
-	isort --recursive --diff --check-only check.py setup.py src tests
+	isort --recursive --diff --check-only setup.py src tests
 	black . --check
 
 .PHONY: test
