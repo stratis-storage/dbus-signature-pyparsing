@@ -16,10 +16,11 @@ def local_file(name):
     return os.path.relpath(os.path.join(os.path.dirname(__file__), name))
 
 
-README = local_file("README.rst")
-
 with open(local_file("src/dbus_signature_pyparsing/_version.py")) as o:
     exec(o.read())  # pylint: disable=exec-used
+
+with open(local_file("README.rst"), encoding="utf-8") as o:
+    long_description = o.read()
 
 setuptools.setup(
     name="dbus-signature-pyparsing",
@@ -28,7 +29,7 @@ setuptools.setup(
     author_email="amulhern@redhat.com",
     url="https://github.com/stratis-storage/dbus-signature-pyparsing",
     description="dbus signature parser",
-    long_description=open(README, encoding="utf-8").read(),
+    long_description=long_description,
     platforms=["Linux"],
     license="Apache 2.0",
     classifiers=[
