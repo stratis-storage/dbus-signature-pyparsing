@@ -16,7 +16,7 @@ jobs:
             task: make -f Makefile fmt-travis
           - dependencies: yamllint
             task: make -f Makefile yamllint
-          - dependencies: pylint python3-pyparsing python3-hs-dbus-signature
+          - dependencies: pylint python3-pyparsing
             task: PYTHONPATH=./src make -f Makefile lint
     runs-on: ubuntu-latest
     container: fedora:36  # NEXT DEVELOPMENT ENVIRONMENT
@@ -26,6 +26,9 @@ jobs:
         run: >
           dnf install -y
           make
+          pip
           ${{ matrix.dependencies }}
+      - name: Install hs-dbus-signature
+        run: pip install hs-dbus-signature
       - name: ${{ matrix.task }}
         run: ${{ matrix.task }}
