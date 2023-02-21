@@ -33,7 +33,7 @@ setuptools.setup(
     description="dbus signature parser",
     long_description=long_description,
     platforms=["Linux"],
-    license="Apache 2.0",
+    license="Apache-2.0",
     classifiers=[
         "Development Status :: 4 - Beta",
         "Intended Audience :: Developers",
