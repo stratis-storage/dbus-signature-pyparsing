@@ -18,7 +18,7 @@ jobs:
             task: make -f Makefile yamllint
           - dependencies: pylint python3-pyparsing python-hypothesis
             task: >
-              PYTHONPATH=./src:../usr/local/lib/python3.11/site-packages
+              PYTHONPATH=./src:/github/home/.local/lib/python3.11/site-packages
               make -f Makefile lint
     runs-on: ubuntu-latest
     container: fedora:38  # NEXT DEVELOPMENT ENVIRONMENT
@@ -31,6 +31,6 @@ jobs:
           pip
           ${{ matrix.dependencies }}
       - name: Install hs-dbus-signature
-        run: pip install --root=.. hs-dbus-signature
+        run: pip install --user hs-dbus-signature
       - name: ${{ matrix.task }}
         run: ${{ matrix.task }}
