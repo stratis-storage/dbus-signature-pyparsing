@@ -3,6 +3,7 @@ dbus-signature-pyparsing 0.4.1
 Recommended development environment: Fedora 38
 
 - Tidies and Maintenance:
+  https://github.com/stratis-storage/dbus-signature-pyparsing/pull/57
   https://github.com/stratis-storage/dbus-signature-pyparsing/pull/55
   https://github.com/stratis-storage/dbus-signature-pyparsing/pull/54
   https://github.com/stratis-storage/dbus-signature-pyparsing/pull/53
