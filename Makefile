@@ -28,10 +28,15 @@ fmt-travis:
 archive:
 	git archive --output=./justbases.tar.gz HEAD
 
-.PHONY: upload-release
-upload-release:
-	python setup.py register sdist upload
-
 .PHONY: yamllint
 yamllint:
 	yamllint --strict .github/workflows/main.yml
+
+.PHONY: package
+package:
+	(umask 0022; python -m build; python -m twine check --strict ./dist/*)
+
+.PHONY: legacy-package
+legacy-package:
+	python3 setup.py build
+	python3 setup.py install
