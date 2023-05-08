@@ -16,3 +16,4 @@ Module for parsing dbus signature using pyparsing.
 """
 
 from ._parsing import Parser
+from ._version import __version__
