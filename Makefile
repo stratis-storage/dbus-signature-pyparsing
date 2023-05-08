@@ -24,10 +24,6 @@ fmt-travis:
 	isort --diff --check-only setup.py src tests
 	black . --check
 
-.PHONY: archive
-archive:
-	git archive --output=./justbases.tar.gz HEAD
-
 .PHONY: yamllint
 yamllint:
 	yamllint --strict .github/workflows/main.yml
