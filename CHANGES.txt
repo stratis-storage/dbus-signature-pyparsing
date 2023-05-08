@@ -1,3 +1,41 @@
+dbus-signature-pyparsing 0.4.1
+==============================
+Recommended development environment: Fedora 38
+
+- Tidies and Maintenance:
+  https://github.com/stratis-storage/dbus-signature-pyparsing/pull/58
+  https://github.com/stratis-storage/dbus-signature-pyparsing/pull/57
+  https://github.com/stratis-storage/dbus-signature-pyparsing/pull/55
+  https://github.com/stratis-storage/dbus-signature-pyparsing/pull/54
+  https://github.com/stratis-storage/dbus-signature-pyparsing/pull/53
+  https://github.com/stratis-storage/dbus-signature-pyparsing/pull/52
+  https://github.com/stratis-storage/dbus-signature-pyparsing/pull/51
+  https://github.com/stratis-storage/dbus-signature-pyparsing/pull/50
+  https://github.com/stratis-storage/dbus-signature-pyparsing/pull/49
+  https://github.com/stratis-storage/dbus-signature-pyparsing/pull/48
+  https://github.com/stratis-storage/dbus-signature-pyparsing/pull/46
+  https://github.com/stratis-storage/dbus-signature-pyparsing/pull/45
+  https://github.com/stratis-storage/dbus-signature-pyparsing/pull/44
+  https://github.com/stratis-storage/dbus-signature-pyparsing/pull/43
+  https://github.com/stratis-storage/dbus-signature-pyparsing/pull/42
+  https://github.com/stratis-storage/dbus-signature-pyparsing/pull/41
+  https://github.com/stratis-storage/dbus-signature-pyparsing/pull/40
+  https://github.com/stratis-storage/dbus-signature-pyparsing/pull/39
+  https://github.com/stratis-storage/dbus-signature-pyparsing/pull/38
+  https://github.com/stratis-storage/dbus-signature-pyparsing/pull/37
+  https://github.com/stratis-storage/dbus-signature-pyparsing/pull/36
+  https://github.com/stratis-storage/dbus-signature-pyparsing/pull/35
+  https://github.com/stratis-storage/dbus-signature-pyparsing/pull/34
+  https://github.com/stratis-storage/dbus-signature-pyparsing/pull/33
+  https://github.com/stratis-storage/dbus-signature-pyparsing/pull/32
+  https://github.com/stratis-storage/dbus-signature-pyparsing/pull/31
+  https://github.com/stratis-storage/dbus-signature-pyparsing/pull/30
+  https://github.com/stratis-storage/dbus-signature-pyparsing/pull/29
+  https://github.com/stratis-storage/dbus-signature-pyparsing/pull/28
+  https://github.com/stratis-storage/dbus-signature-pyparsing/pull/27
+  https://github.com/stratis-storage/dbus-signature-pyparsing/pull/26
+
+
 dbus-signature-pyparsing 0.4
 ============================
 
