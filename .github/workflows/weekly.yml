@@ -18,7 +18,7 @@ jobs:
             task: make -f Makefile yamllint
           - dependencies: pylint python3-pyparsing python-hypothesis
             task: >
-              PYTHONPATH=./src:/github/home/.local/lib/python3.11/site-packages
+              PYTHONPATH=./src:/github/home/.local/lib/python3.12/site-packages
               make -f Makefile lint
     runs-on: ubuntu-latest
     container: fedora:39  # NEXT DEVELOPMENT ENVIRONMENT
