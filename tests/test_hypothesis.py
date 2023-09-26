@@ -44,6 +44,6 @@ class ParseTestCase(unittest.TestCase):
     @settings(max_examples=50, deadline=None)
     def test_parsing(self, signature):
         """
-        Test that parsing is always succesful on valid strings.
+        Test that parsing is always successful on valid strings.
         """
         self.assertIsNotNone(self._PARSER.PARSER.parseString(signature, parseAll=True))
