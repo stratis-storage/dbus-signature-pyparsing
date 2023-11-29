@@ -25,7 +25,7 @@ jobs:
               python3-pyparsing
               python3-hypothesis
             task: >
-              PYTHONPATH=./src:/github/home/.local/lib/python3.11/site-packages
+              PYTHONPATH=./src:/github/home/.local/lib/python3.12/site-packages
               make -f Makefile lint
           - dependencies: >
               python3-pyparsing
@@ -39,7 +39,7 @@ jobs:
           - dependencies: python python3-build twine
             task: make -f Makefile package
     runs-on: ubuntu-latest
-    container: fedora:38  # CURRENT DEVELOPMENT ENVIRONMENT
+    container: fedora:39  # CURRENT DEVELOPMENT ENVIRONMENT
     steps:
       - uses: actions/checkout@v3
       - name: Install dependencies
