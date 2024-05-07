@@ -21,7 +21,7 @@ jobs:
               PYTHONPATH=./src:/github/home/.local/lib/python3.12/site-packages
               make -f Makefile lint
     runs-on: ubuntu-latest
-    container: fedora:39  # NEXT DEVELOPMENT ENVIRONMENT
+    container: fedora:40  # NEXT DEVELOPMENT ENVIRONMENT
     steps:
       - uses: actions/checkout@v4
       - name: Install dependencies
