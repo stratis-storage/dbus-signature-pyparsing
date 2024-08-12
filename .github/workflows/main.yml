@@ -66,9 +66,10 @@ jobs:
               python3-pyparsing
               python3-hypothesis
               python3-hs-dbus-signature
+              python3-setuptools
             task: PYTHONPATH=./src make -f Makefile legacy-package
     runs-on: ubuntu-latest
-    container: fedora:34  # LOWEST DEVELOPMENT ENVIRONMENT
+    container: fedora:35  # LOWEST DEVELOPMENT ENVIRONMENT
     steps:
       - uses: actions/checkout@v4
       - name: Install dependencies
