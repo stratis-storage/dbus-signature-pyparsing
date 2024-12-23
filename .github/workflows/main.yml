@@ -24,17 +24,20 @@ jobs:
               pylint
               python3-pyparsing
               python3-hypothesis
+              python3-setuptools
             task: >
               PYTHONPATH=./src:/github/home/.local/lib/python3.12/site-packages
               make -f Makefile lint
           - dependencies: >
               python3-pyparsing
               python3-hypothesis
+              python3-setuptools
             task: PYTHONPATH=./src make -f Makefile test
           - dependencies: >
               python3-coverage
               python3-pyparsing
               python3-hypothesis
+              python3-setuptools
             task: PYTHONPATH=./src make -f Makefile coverage
           - dependencies: python python3-build twine
             task: make -f Makefile package
