@@ -8,3 +8,6 @@
 
 # coverage output
 htmlcov
+
+# monkeytype output
+monkeytype.sqlite3
