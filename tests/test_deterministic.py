@@ -15,13 +15,10 @@
 Deterministic tests of signature parsing.
 """
 
-# isort: STDLIB
 import unittest
 
-# isort: THIRDPARTY
 import pyparsing
 
-# isort: LOCAL
 from dbus_signature_pyparsing import Parser
 
 

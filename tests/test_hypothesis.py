@@ -15,18 +15,13 @@
 Hypothesis-based tests of signature parsing.
 """
 
-# isort: STDLIB
 import unittest
 from os import sys
 
-# isort: THIRDPARTY
 from hypothesis import given, settings
 
-# isort: FIRSTPARTY
-from hs_dbus_signature import dbus_signatures
-
-# isort: LOCAL
 from dbus_signature_pyparsing import Parser
+from hs_dbus_signature import dbus_signatures
 
 settings.register_profile("tracing", deadline=None)
 if sys.gettrace() is not None:
