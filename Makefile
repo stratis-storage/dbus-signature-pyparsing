@@ -1,8 +1,6 @@
 .PHONY: lint
 lint:
-	pylint setup.py
-	pylint src/dbus_signature_pyparsing
-	pylint tests
+	ruff check
 
 .PHONY: test
 test:
@@ -16,13 +14,14 @@ coverage:
 
 .PHONY: fmt
 fmt:
-	isort setup.py src tests
-	black .
+	ruff check --fix --select I
+	ruff format
+
 
 .PHONY: fmt-travis
 fmt-travis:
-	isort --diff --check-only setup.py src tests
-	black . --check
+	ruff check --select I
+	ruff format --check
 
 .PHONY: yamllint
 yamllint:

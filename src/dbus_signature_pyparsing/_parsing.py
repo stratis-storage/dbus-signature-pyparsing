@@ -15,7 +15,6 @@
 pyparsing based module for parsing a dbus method input or output signature.
 """
 
-# isort: THIRDPARTY
 from pyparsing import Forward, Literal, OneOrMore, ZeroOrMore
 
 
@@ -24,9 +23,6 @@ class Parser:
     Parse a dbus signature using pyparsing.
     """
 
-    # pylint: disable=too-many-instance-attributes
-    # pylint: disable=too-few-public-methods
-    # pylint: disable=invalid-name
     def __init__(self):
         """
         Initializer.
