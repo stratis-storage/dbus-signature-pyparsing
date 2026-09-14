@@ -1,3 +1,35 @@
+dbus-signature-pyparsing 0.4.2
+==============================
+Recommended development environment: Fedora 44
+
+- Tidies and Maintenance:
+  https://github.com/stratis-storage/dbus-signature-pyparsing/pull/85
+  https://github.com/stratis-storage/dbus-signature-pyparsing/pull/84
+  https://github.com/stratis-storage/dbus-signature-pyparsing/pull/83
+  https://github.com/stratis-storage/dbus-signature-pyparsing/pull/82
+  https://github.com/stratis-storage/dbus-signature-pyparsing/pull/81
+  https://github.com/stratis-storage/dbus-signature-pyparsing/pull/80
+  https://github.com/stratis-storage/dbus-signature-pyparsing/pull/79
+  https://github.com/stratis-storage/dbus-signature-pyparsing/pull/78
+  https://github.com/stratis-storage/dbus-signature-pyparsing/pull/77
+  https://github.com/stratis-storage/dbus-signature-pyparsing/pull/76
+  https://github.com/stratis-storage/dbus-signature-pyparsing/pull/75
+  https://github.com/stratis-storage/dbus-signature-pyparsing/pull/74
+  https://github.com/stratis-storage/dbus-signature-pyparsing/pull/73
+  https://github.com/stratis-storage/dbus-signature-pyparsing/pull/72
+  https://github.com/stratis-storage/dbus-signature-pyparsing/pull/71
+  https://github.com/stratis-storage/dbus-signature-pyparsing/pull/70
+  https://github.com/stratis-storage/dbus-signature-pyparsing/pull/68
+  https://github.com/stratis-storage/dbus-signature-pyparsing/pull/67
+  https://github.com/stratis-storage/dbus-signature-pyparsing/pull/66
+  https://github.com/stratis-storage/dbus-signature-pyparsing/pull/65
+  https://github.com/stratis-storage/dbus-signature-pyparsing/pull/64
+  https://github.com/stratis-storage/dbus-signature-pyparsing/pull/63
+  https://github.com/stratis-storage/dbus-signature-pyparsing/pull/62
+  https://github.com/stratis-storage/dbus-signature-pyparsing/pull/61
+  https://github.com/stratis-storage/dbus-signature-pyparsing/pull/60
+
+
 dbus-signature-pyparsing 0.4.1
 ==============================
 Recommended development environment: Fedora 38
